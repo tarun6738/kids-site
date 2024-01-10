@@ -1,11 +1,11 @@
 
 
 .card-container {
-    background-color: #f0f0f0; 
+    
     padding: 12px; 
     border-radius: 10px;
-    width: 148px; /* Adjust width as needed */
-    height: 115px; /* Adjust height as needed */
+    width: 148px; 
+    height: 115px; 
     margin-left: 18px;
     margin-top: 30px;
     display: flex;
@@ -17,16 +17,18 @@
   }
   
   .titleWord {
-    font-size: 24px; /* Adjust font size as needed */
-    margin-bottom: 10px; /* Adjust margin as needed */
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    font-family: 'Rubik', sans-serif;
   }
   
   .titleMeaning {
-    font-size: 16px; /* Adjust font size as needed */
-    color: #555; /* Adjust text color as needed */
+    font-size: 16px; 
+     
+     font-family: 'Lora', serif;
   }
   .card-container.matched {
-    background-color: #a3e7a3; /* Green background for matched cards */
+    background-color: #a3e7a3; 
   }
   .drag-over-content {
     display: flex;
@@ -37,5 +39,5 @@
   }
   
   .centered-icon {
-    margin-top: 10px; /* Adjust the margin as needed */
+    margin-top: 10px; 
   }

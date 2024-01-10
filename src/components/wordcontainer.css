@@ -2,7 +2,7 @@
     width: 100%;
     justify-content: center;
     display: flex;
-    row-gap: 45px; /* Adjust the gap value as needed */
-    justify-content: space-around; /* or space-between, space-evenly depending on your preference */
+    row-gap: 45px;
+    justify-content: space-around;
     flex-wrap: wrap;
 }

@@ -4,12 +4,12 @@ import './imagescontainer.css';
 
 const ImageContainer = ({ onDragStart, onDragEnd }) => {
   const imageData = [
-    { src: '/Images/apple.jpg', alt: 'Image 1', name: 'Apple' },
-    { src: '/Images/banana.webp', alt: 'Image 2', name: 'Banana' },
-    { src: '/Images/orange.jpg', alt: 'Image 3', name: 'Orange' },
-    { src: '/Images/grapes.webp', alt: 'Image 4', name: 'Grapes' },
-    { src: '/Images/pineapple.jpg', alt: 'Image 5', name: 'Pineapple' },
-    { src: '/Images/guava.webp', alt: 'Image 6', name: 'Guava' },
+    { src: '/Images/apple.png', alt: 'Image 1', name: 'Apple' },
+    { src: '/Images/banana.png', alt: 'Image 2', name: 'Banana' },
+    { src: '/Images/orange.png', alt: 'Image 3', name: 'Orange' },
+    { src: '/Images/grapes.png', alt: 'Image 4', name: 'Grapes' },
+    { src: '/Images/pineapple.png', alt: 'Image 5', name: 'Pineapple' },
+    { src: '/Images/guava.png', alt: 'Image 6', name: 'Guava' },
   ];
 
   return (

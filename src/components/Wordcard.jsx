@@ -1,20 +1,27 @@
-// WordCard.jsx
 import React, { useState } from 'react';
 import './wordcard.css';
-import { MdOutlineFileDownload } from 'react-icons/md';
 
 const WordCard = ({ word, meaning, onDrop, onDragOver, matched }) => {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
-  const [hasDropped, setHasDropped] = useState(false);
 
   const cardStyle = {
     backgroundColor: matched ? '#51de51' : 'white',
-    border: isDraggingOver ? '2px dashed #333' : 'none',
+    
+    transform: isDraggingOver ? 'scale(1.3)' : 'scale(1)', 
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDraggingOver(true);
+    onDragOver(e);
+  };
+
+  const handleDragLeave = () => {
+    setIsDraggingOver(false);
   };
 
   const handleDrop = () => {
     setIsDraggingOver(false);
-    setHasDropped(true);
     onDrop(word);
   };
 
@@ -22,27 +29,13 @@ const WordCard = ({ word, meaning, onDrop, onDragOver, matched }) => {
     <div
       className="card-container"
       onDrop={handleDrop}
-      onDragOver={(e) => {
-        e.preventDefault();
-        setIsDraggingOver(true);
-        onDragOver(e);
-      }}
-      onDragLeave={() => setIsDraggingOver(false)}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
       style={cardStyle}
     >
-      {isDraggingOver && !hasDropped ? (
-        <div className="drag-over-content">
-          <h4>Drop the Image here</h4>
-          <div className="centered-icon">
-            <MdOutlineFileDownload class="drop-icon" size={50} />
-          </div>
-        </div>
-      ) : (
-        <>
-          <h1 className='titleWord'>{word}</h1>
-          <p className='titleMeaning'>{meaning}</p>
-        </>
-      )}
+      
+      <h1 className="titleWord">{word}</h1>
+      <p className="titleMeaning">{meaning}</p>
     </div>
   );
 };
