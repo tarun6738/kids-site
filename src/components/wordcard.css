@@ -1,0 +1,31 @@
+
+
+.card-container {
+    background-color: #f0f0f0; 
+    padding: 12px; 
+    border-radius: 10px;
+    width: 148px; /* Adjust width as needed */
+    height: 72px; /* Adjust height as needed */
+    margin-left: 18px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+  }
+  
+  .titleWord {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+  }
+  
+  .titleMeaning {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #555; /* Adjust text color as needed */
+  }
+  .card-container.matched {
+    background-color: #a3e7a3; /* Green background for matched cards */
+  }
+  

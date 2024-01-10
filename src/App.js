@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'
+import WordContainer from './components/WordContainer'
+import ImageContainer from './components/ImageContainer'
+const App = () => {
+  const [draggedImage, setDraggedImage] = useState(null);
+  const [matchedWords, setMatchedWords] = useState([]);
+  const handleDragStart = (imageName) => {
+    setDraggedImage(imageName);
+    console.log(`Dragging image: ${imageName}`);
+  };
+  const handleDragEnd = () => {
+    setDraggedImage(null);
+  };
 
-function App() {
+  const handleDrop = (targetWord) => {
+    console.log(`Dropped ${draggedImage} on word: ${targetWord}`);
+    if (draggedImage === targetWord) {
+      // Check if the word is not already matched
+      if (!matchedWords.includes(targetWord)) {
+        console.log('Matched!');
+        // Add the matched word to the state
+        setMatchedWords((prevMatchedWords) => [...prevMatchedWords, targetWord]);
+      }
+    }
+    else{
+      console.log('No match 😢')
+    }
+    setDraggedImage(null);
+    
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div className="main-container">
+    <WordContainer onDrop={handleDrop} matchedWords={matchedWords}/>
+    <ImageContainer
+      draggedImage={draggedImage}
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+    />
+  </div>
+  )
 }
 
-export default App;
+export default App
