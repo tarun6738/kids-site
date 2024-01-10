@@ -22,7 +22,7 @@ const ImageContainer = ({ onDragStart, onDragEnd }) => {
             alt={image.alt}
             name={image.name}
             draggable="true"
-            onDragStart={() => onDragStart(image.name)}
+            onDragStart={(e) => onDragStart(e,image.name)}
             onDragEnd={onDragEnd}
             style={{ width: '162px', height: '166px', margin: '15px' }}
           />

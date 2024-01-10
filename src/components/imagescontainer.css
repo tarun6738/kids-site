@@ -1,3 +1,13 @@
 .images-container{
-    
+    display: flex;
+    gap: 20px; /* Adjust the gap value as needed */
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.images-container img {
+    width: 162px;
+    height: 166px;
+    margin: 15px;
+    transition: transform 0.2s; /* Add a smooth transition for better visual effect */
 }
